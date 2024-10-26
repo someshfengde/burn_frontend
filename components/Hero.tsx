@@ -1,9 +1,6 @@
 'use client';
-
-import Image from 'next/image';
 import NavLink from './NavLink';
 
-let heroImages = ['/1.png', '/6.png', '/3.png', '/4.png', '/5.png', '/2.png'];
 export default function Hero() {
   return (
       <div className="custom-screen pt-28 text-gray-600">
@@ -13,7 +10,7 @@ export default function Hero() {
           </h1>
           <br></br>
           <br></br>
-          
+
           <p className="max-w-xl mx-auto">
             Burn makes it simple to calculate calories and track your workouts.
           </p>
