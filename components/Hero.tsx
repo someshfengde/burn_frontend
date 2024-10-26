@@ -19,7 +19,7 @@ export default function Hero() {
               href="/start"
               className="text-white bg-gray-800 hover:bg-gray-600 active:bg-gray-900"
             >
-              Let's get started
+              Let&apos;s get started
             </NavLink>
           </div>
         </div>
