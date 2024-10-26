@@ -1,6 +1,11 @@
 # Burn
 
+## Deployment link: https://burnfrontend.vercel.app/start
 **Burn** is a smart app that helps you track your calorie intake by simply snapping a photo of your food. It estimates the calories in the meal and suggests exercises along with the time required to burn those calories. Perfect for those looking to maintain a balanced diet and an active lifestyle.
+
+
+## Web app demo 
+https://github.com/user-attachments/assets/1365d9e9-4740-4002-a98b-898b0b0d9f37
 
 ## Features
 
@@ -17,8 +22,5 @@
 3. **Exercise Suggestions**: Burn suggests various exercises like walking, jogging, cycling, and more, along with the time needed to burn the estimated calories.
 4. **Track Progress**: Keep a record of your daily calorie intake and the exercises you've performed.
 
-## Installation
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/burn.git
+
