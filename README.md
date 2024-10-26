@@ -7,10 +7,17 @@
 ## Web app demo 
 https://github.com/user-attachments/assets/1365d9e9-4740-4002-a98b-898b0b0d9f37
 
+## Mobile app demo
+https://github.com/user-attachments/assets/447c3c18-1a55-4d88-8395-00fd50641d09
+
 ## Features
 
 - **Snap & Analyze**: Take a photo of your meal, and Burn will estimate the calories.
-- **Exercise Suggestions**: Get tailored exercise suggestions based on the number of calories detected.
+- **Exercise Suggestions**: Get tailored exercise suggestions based
+
+
+
+ on the number of calories detected.
 - **Burn Time Estimation**: Know how long it will take to burn those calories with different types of exercises.
 - **Track History**: View your daily intake and exercise history to monitor your progress.
 - **User-Friendly Interface**: Simple and intuitive design for all fitness levels.
