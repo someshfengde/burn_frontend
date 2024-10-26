@@ -1,53 +1,24 @@
-<a href="https://qrGPT.io">
-  <img alt="QrGPT – Generate beautiful AI QR Codes in seconds." src="/public/og-image.png">
-  <h1 align="center">qrGPT</h1>
-</a>
+# Burn
 
-<p align="center">
-  Generate beautiful AI QR Codes in seconds. Powered by Vercel and Replicate.
-</p>
+**Burn** is a smart app that helps you track your calorie intake by simply snapping a photo of your food. It estimates the calories in the meal and suggests exercises along with the time required to burn those calories. Perfect for those looking to maintain a balanced diet and an active lifestyle.
 
-<p align="center">
-  <a href="https://codeium.com?repo_name=nutlope%2Fqrgpt">
-    <img src="https://codeium.com/badges/main" alt="Codium" />
-  </a>
-</p>
+## Features
 
-<p align="center">
-  <a href="#tech-stack"><strong>Tech Stack</strong></a> ·
-  <a href="#deploy-your-own"><strong>Deploy Your Own</strong></a> ·
-  <a href="#authors"><strong>Authors</strong></a> ·
-  <a href="#credits"><strong>Credits</strong></a>
-</p>
-<br/>
+- **Snap & Analyze**: Take a photo of your meal, and Burn will estimate the calories.
+- **Exercise Suggestions**: Get tailored exercise suggestions based on the number of calories detected.
+- **Burn Time Estimation**: Know how long it will take to burn those calories with different types of exercises.
+- **Track History**: View your daily intake and exercise history to monitor your progress.
+- **User-Friendly Interface**: Simple and intuitive design for all fitness levels.
 
-## Tech Stack
+## How It Works
 
-- Next.js [App Router](https://nextjs.org/docs/app)
-- [Replicate](https://replicate.com/) for the AI model
-- [Vercel Blob](https://vercel.com/storage/blob) for image storage
-- [Vercel KV](https://vercel.com/storage/kv) for redis storage and rate limiting
-- [Shadcn UI](https://ui.shadcn.com/) for the component library
+1. **Snap a Photo**: Open the Burn app and take a photo of your meal.
+2. **Calorie Estimation**: The app uses image recognition to analyze the meal and provide an estimated calorie count.
+3. **Exercise Suggestions**: Burn suggests various exercises like walking, jogging, cycling, and more, along with the time needed to burn the estimated calories.
+4. **Track Progress**: Keep a record of your daily calorie intake and the exercises you've performed.
 
-## Deploy Your Own
+## Installation
 
-You can deploy this template to Vercel with the button below:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.fyi/qrGPT)
-
-Note that you'll need to:
-
-- Set up [Replicate](https://replicate.com)
-- Set up [Vercel KV](https://vercel.com/docs/storage/vercel-kv/quickstart)
-- Set up [Vercel Blob](https://vercel.com/docs/storage/vercel-blob/quickstart)
-
-## Authors
-
-- Hassan El Mghari ([@nutlope](https://twitter.com/nutlope))
-- Kevin Hou ([@kevinhou22](https://twitter.com/kevinhou22))
-
-## Credits
-
-- [Codeium](https://codeium.com?repo_name=nutlope%2Fqrgpt) and [v0](https://v0.dev/) for quick prototyping and AI autocomplete
-- [Spirals](https://spirals.vercel.app/) for great code patterns and some code (ty Steven)
-- [Lim Zi Yang](https://github.com/ZYLIM0702) for the original AI model
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/burn.git

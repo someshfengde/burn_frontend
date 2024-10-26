@@ -8,11 +8,11 @@ import PlausibleProvider from 'next-plausible';
 
 const inter = Inter({ subsets: ['latin'] });
 
-let title = 'QrGPT - QR Code Generator';
-let description = 'Generate your AI QR Code in seconds';
-let url = 'https://www.qrgpt.io';
-let ogimage = 'https://www.qrgpt.io/og-image.png';
-let sitename = 'qrGPT.io';
+let title = 'Burn: Fitness App';
+let description = 'Burn makes it simple to calculate calories and track your workouts.';
+let url = 'https://burnfrontend.vercel.app';
+let ogimage = '🔥';
+let sitename = 'Burn: Fitness App';
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
