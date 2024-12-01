@@ -1,109 +1,91 @@
 'use client';
 
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import NavLink from './NavLink';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { useState } from 'react';
+import { Home, Flame, Menu, X } from 'lucide-react';
 
 const Navbar = () => {
-  const [state, setState] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
-    // { title: 'Testimonials', path: '#testimonials' },
-    { title: 'Homepage', path: '/' },
+    { title: 'Homepage', path: '/', icon: Home },
   ];
 
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    // Add closing the navbar menu when navigating
-    const handleState = () => {
-      document.body.classList.remove('overflow-hidden');
-      setState(false);
-    };
-
-    handleState();
-  }, [pathname, searchParams]);
-
-  const handleNavMenu = () => {
-    setState(!state);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
     document.body.classList.toggle('overflow-hidden');
   };
 
   return (
-    <header>
-      <nav
-        className={`bg-white w-full md:static md:text-sm ${
-          state ? 'fixed z-10 h-full' : ''
-        }`}
-      >
-        <div className="custom-screen items-center mx-auto md:flex">
-          <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="font-bold text-lg">🔥 Burn</div>
-            </Link>
-            <div className="md:hidden">
-              <button
-                role="button"
-                aria-label="Open the menu"
-                className="text-gray-500 hover:text-gray-800"
-                onClick={handleNavMenu}
-              >
-                {state ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                    />
-                  </svg>
-                )}
-              </button>
-            </div>
-          </div>
-          <div
-            className={`flex-1 pb-3 mt-8 md:pb-0 md:mt-0 md:block ${
-              state ? '' : 'hidden'
-            }`}
+    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+      <nav className="custom-screen relative py-3 md:py-4">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <a 
+            href="/" 
+            className="flex items-center gap-2 group"
           >
-            <ul className="text-gray-700 justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0 md:text-gray-600 md:font-medium">
-              {navigation.map((item, idx) => {
-                return (
-                  <li key={idx} className="duration-150 hover:text-gray-900">
-                    <Link href={item.path} className="block">
-                      {item.title}
-                    </Link>
-                  </li>
-                );
-              })}
-              <li>
-                <NavLink
+            <Flame 
+              className="text-orange-500 group-hover:rotate-12 transition-transform duration-300" 
+              size={28} 
+            />
+            <span className="text-xl font-bold text-gray-800 group-hover:text-orange-600 transition-colors">
+              Burn
+            </span>
+          </a>
+
+          {/* Mobile Menu Toggle */}
+          <div className="md:hidden">
+            <button
+              onClick={toggleMenu}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              className="text-gray-600 hover:text-gray-900 focus:outline-none"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+
+          {/* Navigation Links */}
+          <div
+            className={`
+              fixed inset-0 bg-white md:static md:block md:bg-transparent
+              ${isMenuOpen ? 'block' : 'hidden'}
+            `}
+          >
+            <ul className="flex flex-col md:flex-row items-center justify-center md:justify-end h-full gap-6 md:gap-4 p-6 md:p-0">
+              {navigation.map((item, idx) => (
+                <li 
+                  key={idx}
+                  className="text-center md:text-left"
+                >
+                  <a 
+                    href={item.path} 
+                    className="
+                      flex items-center gap-2 text-lg md:text-base 
+                      text-gray-700 hover:text-orange-600 
+                      transition-colors group
+                    "
+                  >
+                    <item.icon 
+                      size={20} 
+                      className="group-hover:text-orange-500 transition-colors" 
+                    />
+                    {item.title}
+                  </a>
+                </li>
+              ))}
+              
+              <li className="mt-4 md:mt-0 w-full md:w-auto">
+                <a
                   href="/start"
-                  className="block font-medium text-sm text-white bg-gray-800 hover:bg-gray-600 active:bg-gray-900 md:inline"
+                  className="
+                    block w-full md:inline-block text-center px-6 py-2.5 
+                    bg-orange-500 text-white font-medium rounded-full
+                    hover:bg-orange-600 focus:bg-orange-700 
+                    transition-colors shadow-md hover:shadow-lg
+                  "
                 >
                   Get Started
-                </NavLink>
+                </a>
               </li>
             </ul>
           </div>
@@ -114,3 +96,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
