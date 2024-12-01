@@ -1,20 +1,48 @@
-import { V0Logo } from './v0logo';
+import { Heart, ExternalLink } from 'lucide-react';
 
 const Footer = () => (
-  <footer>
-    <div className="custom-screen pt-16">
-      <div className="mt-10 py-10 border-t items-center justify-between flex">
-        <p className="text-gray-600">
-          Created with ❤️ at Mumbaihacks.
-        </p>
-        <div className="flex items-center gap-x-6 text-gray-400">
+  <footer className="bg-gray-50 border-t border-gray-100">
+    <div className="custom-screen py-12">
+      <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+        <div className="flex items-center space-x-3">
+          <Heart 
+            className="text-red-500 animate-pulse" 
+            size={24} 
+          />
+          <p className="text-gray-600 text-sm md:text-base">
+            Crafted with passion by dedicated developers
+          </p>
+        </div>
+        
+        <div className="flex items-center space-x-4">
           <a
-            className="border border-slate-200 rounded-md px-3 py-1 tracking-tight flex gap-1 hover:scale-105 transition"
             href="https://v0.dev/"
             target="_blank"
+            rel="noopener noreferrer"
+            className="
+              group 
+              flex 
+              items-center 
+              gap-2 
+              bg-white 
+              border 
+              border-gray-200 
+              rounded-full 
+              px-4 
+              py-2 
+              text-sm 
+              font-medium 
+              text-gray-700 
+              shadow-sm 
+              hover:bg-gray-50 
+              hover:shadow-md 
+              transition-all 
+              duration-300
+            "
           >
-            <span className="text-gray-500">Built with</span>
-            <V0Logo width={25} />
+            <span>Built with ❤️</span>
+            
+            
           </a>
         </div>
       </div>
