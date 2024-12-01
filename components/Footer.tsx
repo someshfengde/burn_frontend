@@ -1,4 +1,4 @@
-import { Heart, ExternalLink } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 const Footer = () => (
   <footer className="bg-gray-50 border-t border-gray-100">
